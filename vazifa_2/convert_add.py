@@ -1,23 +1,13 @@
-"""
-  String to Integers
-"""
+""" String to Integers """
 
 def convert_add():
-  print("Ro'yxat shakillantirayapmiz: ")
-  royxat = []
+  numbers = []
   while True:
-    son = input("Son kiriting: (Son kiritishni to'xatish uchun 'q' ni kiritng.) ")
-    if son == 'q':
+    user_input = input("Son kiriting: (To'xtatish uchun 'q' kiriting) ")
+    if user_input == 'q':
       break
+    if user_input.isdigit():
+      numbers.append(int(user_input))
     else:
-      if son.isdigit():
-        royxat.append(son)
-        print(royxat)
-      else:
-        print('Iltimos, son kiriting...')
-
-  for idx in range(len(royxat)):
-    royxat[idx] = int(royxat[idx])
-
-  print(f"Ro'yxat: {royxat}")
-  print(f"Ro'yxat sonlari yig'indisi: {sum(royxat)}")
+      print('Iltimos, son kiriting!')
+  return numbers, sum(numbers)
